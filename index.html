@@ -4,16 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wordle</title>
+    <title>Brandle</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://kit.fontawesome.com/990a3931ce.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1> Wordle Clone </h1>
+    <h1>Brandle <i id="about" class="fa-regular fa-circle-question"></i></h1>
+    <div id="about_info" class="hideP">
+        <div style="text-align: center; font-size: 14pt;">
+            Brandle is a wordle clone where you guess the correct brand in six tries! <br />
+            The code was taken and modified from this <a href="https://github.com/Morgenstern2573/wordle_clone" target="_blank">wordle clone</a> on GitHub!
+        </div>
+    </div>
+    <p>
+        <div style="text-align: center; font-size: 14pt;">
+            This is a worlde clone where you need to guess the correct <b>brand</b> in 6 tries!<br/>
+            Good luck!
+        </span>
+    </p>
     
     <div id="game-board">
 
@@ -56,10 +66,7 @@
         </div>
     </div>
 
-<script
-src="https://code.jquery.com/jquery-3.6.0.min.js"
-integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script src="script.js" type="module"></script>
 </body>

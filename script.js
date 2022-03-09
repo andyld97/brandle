@@ -1,12 +1,11 @@
 import { WORDS } from "./words.js";
 
 const NUMBER_OF_GUESSES = 6;
+const L = 6;
 let guessesRemaining = NUMBER_OF_GUESSES;
 let currentGuess = [];
 let nextLetter = 0;
 let rightGuessString = WORDS[Math.floor(Math.random() * WORDS.length)]
-
-console.log(rightGuessString)
 
 function initBoard() {
     let board = document.getElementById("game-board");
@@ -15,7 +14,7 @@ function initBoard() {
         let row = document.createElement("div")
         row.className = "letter-row"
         
-        for (let j = 0; j < 7; j++) {
+        for (let j = 0; j < L; j++) {
             let box = document.createElement("div")
             box.className = "letter-box"
             row.appendChild(box)
@@ -61,10 +60,12 @@ function checkGuess () {
         guessString += val
     }
 
-    if (guessString.length != 5) {
+    if (guessString.length != L) {
         toastr.error("Not enough letters!")
         return
     }
+
+    guessString = guessString.toLowerCase();
 
     if (!WORDS.includes(guessString)) {
         toastr.error("Word not in list!")
@@ -72,7 +73,7 @@ function checkGuess () {
     }
 
     
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < L; i++) {
         let letterColor = ''
         let box = row.children[i]
         let letter = currentGuess[i]
@@ -123,9 +124,14 @@ function checkGuess () {
 }
 
 function insertLetter (pressedKey) {
-    if (nextLetter === 5) {
+    if (nextLetter === L) {
         return
     }
+
+    // Prevent F1-F12 and other invalid keys
+    if (pressedKey.length != 1)
+        return
+
     pressedKey = pressedKey.toLowerCase()
 
     let row = document.getElementsByClassName("letter-row")[6 - guessesRemaining]
@@ -196,5 +202,10 @@ document.getElementById("keyboard-cont").addEventListener("click", (e) => {
 
     document.dispatchEvent(new KeyboardEvent("keyup", {'key': key}))
 })
+
+document.getElementById("about").addEventListener("click", (e) => {
+    var elem = document.getElementById("about_info");
+    elem.classList.toggle('hideP');
+});
 
 initBoard();
