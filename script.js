@@ -90,8 +90,8 @@ function checkGuess () {
                 // shade green 
                 letterColor = 'green'
             } else {
-                // shade box yellow
-                letterColor = 'yellow'
+                // shade box orange
+                letterColor = 'orange'
             }
 
             rightGuess[letterPosition] = "#"
@@ -170,12 +170,12 @@ document.addEventListener("keyup", (e) => {
     }
 
     let pressedKey = String(e.key)
-    if (pressedKey === "Backspace" && nextLetter !== 0) {
+    if (pressedKey === "⌫" && nextLetter !== 0) {
         deleteLetter()
         return
     }
 
-    if (pressedKey === "Enter") {
+    if (pressedKey === "⎆") {
         checkGuess()
         return
     }
