@@ -95,16 +95,5 @@ export const WORDS = [
     'airbnb',
     'airbus',
     'amtrak',
+    'github'
 ];
-
-export const WORDS_7 = [
-    'samsung',
-    'corsair',
-    'siemens',
-    'fujitsu',
-    'android',
-    'bequiet',
-    'windows',
-    'mozilla',
-];
-
